@@ -5,4 +5,5 @@ module.exports = class HomeController extends Controller
   historyURL: 'home'
 
   index: ->
+    console.debug 'homecontroller#initialize'
     @view = new HomePageView()

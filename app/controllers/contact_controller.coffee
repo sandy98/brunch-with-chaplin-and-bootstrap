@@ -5,4 +5,5 @@ module.exports = class ContactController extends Controller
   historyURL: 'contact'
 
   index: ->
+    console.debug 'contactcontroller#index'
     @view = new ContactPageView()
