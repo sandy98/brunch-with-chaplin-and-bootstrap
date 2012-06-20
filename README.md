@@ -1,26 +1,23 @@
-# Brunch with Chaplin
-Brunch with Chaplin is a skeleton (boilerplate) for [Brunch](http://brunch.io) 
-based on [Chaplin](https://github.com/chaplinjs/chaplin) framework.
+# Brunch with Chaplin and Bootstrap
+A skeleton (boilerplate) for [Brunch](http://brunch.io) 
+based on [Chaplin](https://github.com/chaplinjs/chaplin) framework and the [Bootstrap](http://twitter.github.com/bootstrap) toolkit.
 
-Requires Brunch 1.3+.
+Requires [Brunch](http://brunch.io/) 1.3+.
 
 ## Getting started
 * Create new project via executing `brunch new <project name>`.
-Brunch with chaplin is a default application skeleton for Brunch,
-so you don't need to specify `--skeleton` option for the command.
+Brunch with chaplin is not the default application skeleton for Brunch,
+so you need to specify `--skeleton` option for the command.
 * Build the project with `brunch b` or `brunch w`.
 * Open the `public/` dir to see the result.
 * Write your code.
 
-Example application built with the lib:
-[Ost.io](https://github.com/paulmillr/ostio).
-
-See [Chaplin github page](https://github.com/chaplinjs/chaplin) for
+See [Chaplin github page](https://github.com/chaplinjs/chaplin) or [Brunch github page](http://brunch.io/) for
 documentation.
 
-## Difference from Chaplin Boilerplate
-[Chaplin Boilerplate](https://github.com/chaplinjs/chaplin-boilerplate)
-is a official boilerplate all for chaplin. This skeleton is almost the same,
+## Difference from Brunch-with-Chaplin skeleton
+[Brunch-with-Chaplin skeleton](https://github.com/paulmillr/brunch-with-chaplin)
+is a official skeleton for brunch. This skeleton is almost the same,
 except a few changes:
 
 * Added Header.
@@ -47,7 +44,7 @@ and Twitter
 ## Other
 Versions of software the skeleton uses:
 
-* HTML5Boilerplate 3.0.3
+* Bootstrap 2.0.4
 * jQuery 1.7.2
 * Backbone 0.9.2
 * Underscore 1.3.3
@@ -56,9 +53,7 @@ Versions of software the skeleton uses:
 ## License
 The MIT license.
 
-Copyright (c) 2012 Paul Miller (http://paulmillr.com/)
-
-Copyright (c) 2012 Moviepilot GmbH, 9elements GmbH et al.
+Copyright (c) 2012 Vincent van Proosdij (http://github.com/vip32)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
