@@ -18,8 +18,10 @@ describe 'HeaderView', ->
     @view.dispose()
     @model.dispose()
 
-  it 'should display 3 links', ->
-    expect(@view.$el.find 'a').to.have.length 3
+  it 'should display 6 brunch links', ->
+    # for item in @view.$el.find('a')
+    #   console.log '--> ' + item.href
+    expect(@view.$el.find 'a').to.have.length 6
 
   it 'should re-render on login event', ->
     expect(@view.renderTimes).to.equal 1
