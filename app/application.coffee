@@ -14,7 +14,6 @@ module.exports = class Application extends Chaplin.Application
 
   initialize: ->
     super
-    console.debug 'application#initialize'
 
     # Initialize core components
     @initDispatcher()

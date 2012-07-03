@@ -1,3 +1,4 @@
 module.exports = (match) ->
-  match '', 'home#index'
-  match 'contact', 'contact#index'
+  match '', 'home#show'
+  match 'contact', 'contact#show'
+  match 'about', 'about#show'
