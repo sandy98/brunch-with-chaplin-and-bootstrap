@@ -4,6 +4,6 @@ HomePageView = require 'views/home_page_view'
 module.exports = class HomeController extends Controller
   historyURL: 'home'
 
-  show: ->
+  index: ->
     console.log('home#show')
     @view = new HomePageView()

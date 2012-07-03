@@ -4,6 +4,6 @@ AboutPageView = require 'views/about_page_view'
 module.exports = class AboutController extends Controller
   historyURL: 'about'
 
-  show: ->
+  index: ->
     console.log('about#show')
     @view = new AboutPageView()
