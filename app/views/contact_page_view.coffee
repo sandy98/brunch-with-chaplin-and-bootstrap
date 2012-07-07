@@ -6,6 +6,7 @@ module.exports = class ContactPageView extends PageView
   className: 'contact-page'
 
   initialize: ->
+    super
     console.log 'contact_page_view#initialize'
     @delegate 'click', '#send', @send
 
