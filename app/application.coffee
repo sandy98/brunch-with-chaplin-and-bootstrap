@@ -19,7 +19,7 @@ module.exports = class Application extends Chaplin.Application
     @initDispatcher()
     @initLayout()
     @initMediator()
-
+  
     # Application-specific scaffold
     @initControllers()
 
