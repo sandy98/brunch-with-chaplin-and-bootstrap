@@ -4,7 +4,7 @@ template = require 'views/templates/footer'
 
 module.exports = class FooterView extends View
   template: template
-  container: '#footer-container'
+  container: 'footer'
   autoRender: true
 
   initialize: ->

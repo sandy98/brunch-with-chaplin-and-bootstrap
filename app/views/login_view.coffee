@@ -4,8 +4,7 @@ template = require 'views/templates/login'
 
 module.exports = class LoginView extends View
   template: template
-  id: 'login'
-  container: '#page-container'
+  container: '.hero-unit'
   autoRender: true
 
   # Expects the serviceProviders in the options

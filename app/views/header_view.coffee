@@ -3,9 +3,8 @@ template = require 'views/templates/header'
 
 module.exports = class HeaderView extends View
   template: template
-  id: 'header'
-  className: 'header'
-  container: '#header-container'
+  className: 'navbar-inner'
+  container: '.navbar'
   autoRender: true
 
   initialize: ->

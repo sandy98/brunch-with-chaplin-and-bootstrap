@@ -1,4 +1,3 @@
-mediator = require 'mediator'
 Controller = require 'controllers/base/controller'
 User = require 'models/user'
 LoginView = require 'views/login_view'
