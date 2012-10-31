@@ -8,4 +8,4 @@ describe 'Header', ->
     @model.dispose()
 
   it 'should contain 6 items', ->
-    expect(@model.get 'items').to.have.length 6
+    expect(@model.get 'items').to.have.length 7

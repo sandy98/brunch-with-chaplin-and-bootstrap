@@ -20,7 +20,7 @@ module.exports = class Application extends Chaplin.Application
     @initDispatcher()
     @initLayout()
     @initMediator()
-  
+
     # Application-specific scaffold
     @initControllers()
 
@@ -60,7 +60,7 @@ module.exports = class Application extends Chaplin.Application
   # -------------------------------------
   initMediator: ->
     # Create a user property
-    Chaplin.mediator.user = null
+    mediator.user = null
     # Add additional application-specific properties and methods
     # Seal the mediator
-    Chaplin.mediator.seal()
+    mediator.seal()

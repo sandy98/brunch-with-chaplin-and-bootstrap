@@ -21,7 +21,7 @@ describe 'HeaderView', ->
   it 'should display 6 brunch links', ->
     # for item in @view.$el.find('a')
     #   console.log '--> ' + item.href
-    expect(@view.$el.find 'a').to.have.length 6
+    expect(@view.$el.find 'a').to.have.length 10
 
   it 'should re-render on login event', ->
     expect(@view.renderTimes).to.equal 1
