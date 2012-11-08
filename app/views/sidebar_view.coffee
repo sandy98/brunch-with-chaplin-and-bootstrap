@@ -5,6 +5,11 @@ module.exports = class SidebarView extends View
   container: '.sidebar-nav'
   autoRender: true
 
+  initialize: ->
+    super
+    @modelBind 'reset', ->
+      @render()
+
   getTemplateData: ->
     title: 'Sidebar'
-    collection: @collection.toJSON()
+    collection: @collection?.toJSON()
