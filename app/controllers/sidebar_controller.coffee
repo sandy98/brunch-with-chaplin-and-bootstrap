@@ -1,12 +1,12 @@
 Controller = require 'controllers/base/controller'
-Issues = require 'models/issue_collection'
-SidebarView = require 'views/sidebar_view'
+Collection = require 'models/issue_collection'
+View = require 'views/sidebar_view'
 
 module.exports = class SidebarController extends Controller
 
-  initialize: ->
-    new Issues().fetch
+  initialize: (options) ->
+    new Collection().fetch
       success: (collection, response) ->
-        @view = new SidebarView({collection})
-      error: (collection, response) ->
-        console.error 'error'
+        @view = new View(collection: collection)
+      error: (collection, xhr, options) ->
+        console.error xhr

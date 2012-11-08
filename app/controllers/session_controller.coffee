@@ -1,5 +1,7 @@
+mediator = require 'mediator'
 Controller = require 'controllers/base/controller'
 User = require 'models/user'
+Google = require 'lib/services/google'
 LoginView = require 'views/login_view'
 
 module.exports = class SessionController extends Controller
@@ -7,7 +9,7 @@ module.exports = class SessionController extends Controller
   # This just hardcoded here to avoid async loading of service providers.
   # In the end you might want to do this.
   @serviceProviders = {
-    # facebook: new Facebook()
+    google: new Google()
   }
 
   # Was the login status already determined?
@@ -57,6 +59,7 @@ module.exports = class SessionController extends Controller
   # Handler for the global !showLoginView event
   showLoginView: ->
     return if @loginView
+    console.log SessionController.serviceProviders
     @loadServiceProviders()
     @loginView = new LoginView
       serviceProviders: SessionController.serviceProviders
@@ -118,7 +121,7 @@ module.exports = class SessionController extends Controller
     @serviceProviderName = null
 
     # Show the login view again
-    @showLoginView()
+    # @showLoginView()
 
     @publishEvent 'loginStatus', false
 

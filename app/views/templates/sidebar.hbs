@@ -1,21 +1,7 @@
 <ul class="nav nav-list">
-  <li class="nav-header">Sidebar</li>
-  <li class="active"><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li class="nav-header">Sidebar</li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li class="nav-header">Sidebar</li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link...</a></li>
-  {{#each models}}
-    <li>AAAA</li>
+  <li class="nav-header">{{title}}</li>
+  <li class="active"><a href="#">Group</a></li>
+  {{#each collection}}
+    <li><a href="/issue/{{id}}">{{title}}</a></li>
   {{/each}}
 </ul>

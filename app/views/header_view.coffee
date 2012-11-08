@@ -1,13 +1,26 @@
 View = require 'views/base/view'
-template = require 'views/templates/header'
+Model = require 'models/base/model'
+mediator = require 'mediator'
 
 module.exports = class HeaderView extends View
-  template: template
+  template: require 'views/templates/header'
   className: 'navbar-inner'
   container: '.navbar'
   autoRender: true
 
   initialize: ->
     super
-    @subscribeEvent 'loginStatus', @render
-    @subscribeEvent 'startupController', @render
+    @delegate 'click', '.login', -> @publishEvent '!showLogin', @
+    @delegate 'click', '.logout', -> @publishEvent '!logout', @
+
+    @subscribeEvent 'login', -> @render()
+    @subscribeEvent 'loginStatus', (active) -> @render()
+
+  getTemplateData: ->
+    templateData = super
+    templateData.user = mediator?.user?.toJSON()
+    templateData
+
+  afterRender: ->
+    super
+    $('.welcome').popover()

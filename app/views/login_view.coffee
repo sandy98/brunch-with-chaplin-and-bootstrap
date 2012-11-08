@@ -1,10 +1,10 @@
 utils = require 'lib/utils'
 View = require 'views/base/view'
-template = require 'views/templates/login'
 
 module.exports = class LoginView extends View
-  template: template
-  container: '.hero-unit'
+  template: require 'views/templates/login'
+  container: '.container'
+  # containerMethod: 'html'
   autoRender: true
 
   # Expects the serviceProviders in the options
@@ -17,12 +17,13 @@ module.exports = class LoginView extends View
   initButtons: (serviceProviders) ->
     for serviceProviderName, serviceProvider of serviceProviders
       buttonSelector = ".#{serviceProviderName}"
-      @$(buttonSelector).addClass('service-loading')
+      # @$(buttonSelector).addClass('btn-inverse')
 
       loginHandler = _(@loginWith).bind(
-        this, serviceProviderName, serviceProvider
+        # this, serviceProviderName, serviceProvider
+        @loginWith serviceProviderName, serviceProvider
       )
-      @delegate 'click', buttonSelector, loginHandler
+      # @delegate 'click', buttonSelector, loginHandler
 
       loaded = _(@serviceProviderLoaded).bind(
         this, serviceProviderName, serviceProvider
@@ -35,18 +36,20 @@ module.exports = class LoginView extends View
       serviceProvider.fail failed
 
   loginWith: (serviceProviderName, serviceProvider, event) ->
-    event.preventDefault()
+    console.log '!login', serviceProviderName
+    event?.preventDefault()
     return unless serviceProvider.isLoaded()
     @publishEvent 'login:pickService', serviceProviderName
     @publishEvent '!login', serviceProviderName
 
   serviceProviderLoaded: (serviceProviderName) ->
+    console.log "loaded: #{serviceProviderName}"
     @$(".#{serviceProviderName}").removeClass('service-loading')
 
   serviceProviderFailed: (serviceProviderName) ->
+    console.error "Error connecting. Please check whether you are blocking #{utils.upcase(serviceProviderName)}."
     @$(".#{serviceProviderName}")
       .removeClass('service-loading')
       .addClass('service-unavailable')
       .attr('disabled', true)
-      .attr('title', "Error connecting. Please check whether you are
-blocking #{utils.upcase(serviceProviderName)}.")
+      .attr('title', "Error connecting. Please check whether you are blocking #{utils.upcase(serviceProviderName)}.")

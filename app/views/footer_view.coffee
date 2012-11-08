@@ -1,9 +1,7 @@
-mediator = require 'mediator'
 View = require 'views/base/view'
-template = require 'views/templates/footer'
 
 module.exports = class FooterView extends View
-  template: template
+  template: require 'views/templates/footer'
   container: 'footer'
   autoRender: true
 
