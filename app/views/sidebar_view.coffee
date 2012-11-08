@@ -7,9 +7,5 @@ module.exports = class SidebarView extends View
 
   initialize: ->
     super
-    @modelBind 'reset', ->
+    @modelBind 'change', ->
       @render()
-
-  getTemplateData: ->
-    title: 'Sidebar'
-    collection: @collection?.toJSON()
