@@ -1,12 +1,13 @@
 Controller = require 'controllers/base/controller'
-Model = require 'models/issues'
+Collection = require 'models/issues_collection'
 View = require 'views/sidebar_view'
 
 module.exports = class SidebarController extends Controller
 
   initialize: (options) ->
-    @model = new Model()
-    @view = new View({@model})
-    @model.fetch # triggers a reset when ready, view will render
+    super
+    @collection = new Collection()
+    @view = new View({@collection})
+    @collection.fetch # triggers a reset when ready, view will render
       error: (collection, xhr, options) ->
         console.error xhr

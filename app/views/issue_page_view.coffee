@@ -5,5 +5,8 @@ module.exports = class IssuePageView extends PageView
   container: '.container'
   containerMethod: 'html'
 
-  getTemplateData: ->
-    model: @model?.toJSON()
+  initialize: ->
+    super
+    @modelBind 'reset', ->
+      @model = @collection?.first()
+      @render()
