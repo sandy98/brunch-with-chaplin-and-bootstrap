@@ -7,5 +7,5 @@ module.exports = class SidebarView extends View
 
   initialize: ->
     super
-    @modelBind 'reset', ->
+    @listenTo @collection, 'reset', ->
       @render()
