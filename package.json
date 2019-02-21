@@ -22,7 +22,7 @@
     "css-brunch": ">= 1.0 < 1.6",
     "stylus-brunch": ">= 1.0 < 1.6",
 
-    "handlebars-brunch": ">= 1.0 < 1.6",
+    "handlebars-brunch": ">1.10.0",
 
     "uglify-js-brunch": ">= 1.0 < 1.6",
     "clean-css-brunch": ">= 1.0 < 1.6"
